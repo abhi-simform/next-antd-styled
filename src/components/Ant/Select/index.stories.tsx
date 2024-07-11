@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Select } from '.'
 
-const meta: Meta<typeof Select> = {
+const SelectStory: Meta<typeof Select> = {
   title: 'Ant Design/Select',
   parameters: {
     layout: 'centered'
@@ -16,11 +16,11 @@ const meta: Meta<typeof Select> = {
   component: Select
 }
 
-export default meta
+export default SelectStory
 
 type Story = StoryObj<typeof Select>
 
-export const Demo: Story = {
+export const SelectDemo: Story = {
   args: {
     options: [
       { value: 'jack', label: 'Jack' },

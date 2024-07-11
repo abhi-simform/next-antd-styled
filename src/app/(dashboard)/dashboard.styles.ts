@@ -23,16 +23,12 @@ export const DashboardSider = styled(Sider)`
 export const DashboardHeader = styled(Header)`
   position: sticky;
   top: 0;
-  background-color: var(--neutral-0);
+  background-color: var(--neutral-50);
   display: flex;
   align-items: center;
   justify-content: space-between;
   img {
     max-width: 200px;
-  }
-  .ant-menu {
-    flex-grow: 1;
-    justify-content: flex-end;
   }
 `
 
@@ -45,13 +41,9 @@ export const SidebarMenu = styled(Menu)`
   .ant-menu-submenu-selected {
     .ant-menu-submenu-title {
       background-color: var(--primary-500);
-      color: var(--neutral-0);
       &:hover {
         background-color: var(--primary-600);
       }
     }
-  }
-  .ant-menu-item-selected {
-    background-color: var(--primary-200);
   }
 `

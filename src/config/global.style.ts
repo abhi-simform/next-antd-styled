@@ -47,7 +47,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
   text-rendering: optimizeSpeed;
-  background-color: var(--neutral-100);
+  background-color: var(--neutral-50);
   color: var(--neutral-950);
 }
 

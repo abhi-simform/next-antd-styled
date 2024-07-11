@@ -3,7 +3,8 @@ import * as Icons from '.'
 import { StyledDiv } from './icons.style'
 
 export default {
-  title: 'Theme/SVG Icons'
+  title: 'Custom/SVG Icons',
+  tags: ['autodocs']
 }
 
 export function Default() {
@@ -22,8 +23,4 @@ export function Default() {
       })}
     </Row>
   )
-}
-
-Default.story = {
-  name: 'SVGIcon'
 }

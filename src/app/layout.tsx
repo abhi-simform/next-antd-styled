@@ -1,7 +1,5 @@
 import type { Metadata } from 'next'
-import Image from 'next/image'
 import { ThemeProvider } from '@/context/ThemeContext'
-import { AuthStyles } from './auth.styles'
 
 export const metadata: Metadata = {
   title: 'NextJS + Styled Components',
@@ -25,21 +23,7 @@ export default function AuthLayout({
         <meta name="theme-color" content="#ffffff" />
       </head>
       <body>
-        <ThemeProvider>
-          <AuthStyles>
-            <aside className="aside" />
-            <div className="content">
-              <Image
-                src="/images/logoFull.svg"
-                className="logo"
-                alt="simform logo"
-                width={686}
-                height={126}
-              />
-              <div className="form">{children}</div>
-            </div>
-          </AuthStyles>
-        </ThemeProvider>
+        <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
   )

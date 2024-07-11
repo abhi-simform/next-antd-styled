@@ -9,6 +9,7 @@ export const globalTokens: Partial<AliasToken> = {
   controlOutline: 'var(--primary-200)',
   controlOutlineWidth: 1,
   borderRadius: 2,
+  colorText: 'var(--neutral-950)',
   colorPrimary: 'var(--primary-500)',
   colorPrimaryBg: 'var(--primary-50)',
   colorPrimaryBgHover: 'var(--primary-100)',
@@ -56,9 +57,17 @@ export const componentTokens: OverrideToken = {
     colorTextPlaceholder: 'var(--neutral-500)'
   },
   Layout: {
-    siderBg: 'var(--neutral-0)',
-    headerBg: 'var(--neutral-0)',
-    bodyBg: 'var(--neutral-50)',
+    siderBg: 'var(--neutral-50)',
+    headerBg: 'var(--neutral-50)',
+    bodyBg: 'var(--neutral-100)',
     triggerBg: 'var(--primary-500)'
+  },
+  Menu: {
+    colorBgBase: 'var(--neutral-50)',
+    itemBg: 'var(--neutral-50)',
+    itemSelectedColor: 'var(--white)',
+    itemSelectedBg: 'var(--primary-500)',
+    horizontalItemSelectedColor: 'var(--neutral-950)',
+    horizontalItemHoverColor: 'var(--neutral-950)'
   }
 }

@@ -4,7 +4,7 @@ import { MenuProps } from 'antd'
 import { Layout, Menu } from '@/components/Ant'
 import { ThemeProvider } from '@/context/ThemeContext'
 import { CloseCircle, EyeClose, EyeOpen } from '@/components/Icons'
-import { Images } from '@/config/images'
+import ThemeSwitcher from '@/components/ThemeSwitcher'
 import {
   DashboardContent,
   DashboardHeader,
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   description: 'NextJS, Ant Design and Styled Components boilerplate'
 }
 
-const items = new Array(5).fill(null).map((_, index) => ({
+const items = new Array(3).fill(null).map((_, index) => ({
   key: index + 1,
   label: `nav ${index + 1}`
 }))
@@ -45,7 +45,7 @@ const items2: MenuProps['items'] = [
   }
 })
 
-export default function RootLayout({
+export default function MainDashboardLayout({
   children
 }: Readonly<{
   children: React.ReactNode
@@ -74,8 +74,9 @@ export default function RootLayout({
             </DashboardSider>
             <Layout>
               <DashboardHeader>
-                <Image src={Images.logoFull} alt="simform logo" />
-                <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['2']} items={items} />
+                <Image src="/images/logoFUll.svg" alt="simform logo" width={686} height={126} />
+                <Menu mode="horizontal" defaultSelectedKeys={['2']} items={items} />
+                <ThemeSwitcher />
               </DashboardHeader>
               <DashboardContent>{children}</DashboardContent>
             </Layout>
