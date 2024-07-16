@@ -6,11 +6,11 @@ import { ThemeProvider } from '@/context/ThemeContext'
 import { CloseCircle, EyeClose, EyeOpen } from '@/components/Icons'
 import ThemeSwitcher from '@/components/ThemeSwitcher'
 import {
-  DashboardContent,
-  DashboardHeader,
-  DashboardLayout,
-  DashboardSider,
-  SidebarMenu
+  DashboardContentStyle,
+  DashboardHeaderStyle,
+  DashboardLayoutStyle,
+  DashboardSiderStyle,
+  SidebarMenuStyle
 } from './dashboard.styles'
 
 export const metadata: Metadata = {
@@ -45,7 +45,7 @@ const items2: MenuProps['items'] = [
   }
 })
 
-export default function MainDashboardLayout({
+export default function DashboardLayout({
   children
 }: Readonly<{
   children: React.ReactNode
@@ -63,24 +63,24 @@ export default function MainDashboardLayout({
       </head>
       <body>
         <ThemeProvider>
-          <DashboardLayout>
-            <DashboardSider breakpoint="lg" collapsible>
-              <SidebarMenu
+          <DashboardLayoutStyle>
+            <DashboardSiderStyle breakpoint="lg" collapsible>
+              <SidebarMenuStyle
                 mode="inline"
                 defaultSelectedKeys={['1']}
                 defaultOpenKeys={['sub1']}
                 items={items2}
               />
-            </DashboardSider>
+            </DashboardSiderStyle>
             <Layout>
-              <DashboardHeader>
+              <DashboardHeaderStyle>
                 <Image src="/images/logoFUll.svg" alt="simform logo" width={686} height={126} />
                 <Menu mode="horizontal" defaultSelectedKeys={['2']} items={items} />
                 <ThemeSwitcher />
-              </DashboardHeader>
-              <DashboardContent>{children}</DashboardContent>
+              </DashboardHeaderStyle>
+              <DashboardContentStyle>{children}</DashboardContentStyle>
             </Layout>
-          </DashboardLayout>
+          </DashboardLayoutStyle>
         </ThemeProvider>
       </body>
     </html>

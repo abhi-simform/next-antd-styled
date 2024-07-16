@@ -3,12 +3,12 @@
 import { Content, Header, Layout, Menu, Sider } from '@/components/Ant'
 import styled from 'styled-components'
 
-export const DashboardLayout = styled(Layout)`
+export const DashboardLayoutStyle = styled(Layout)`
   min-height: 100vh;
   min-height: 100dvh;
 `
 
-export const DashboardSider = styled(Sider)`
+export const DashboardSiderStyle = styled(Sider)`
   overflow: auto;
   top: 0;
   left: 0;
@@ -20,7 +20,7 @@ export const DashboardSider = styled(Sider)`
   }
 `
 
-export const DashboardHeader = styled(Header)`
+export const DashboardHeaderStyle = styled(Header)`
   position: sticky;
   top: 0;
   background-color: var(--neutral-50);
@@ -32,11 +32,11 @@ export const DashboardHeader = styled(Header)`
   }
 `
 
-export const DashboardContent = styled(Content)`
+export const DashboardContentStyle = styled(Content)`
   padding: 20px;
 `
 
-export const SidebarMenu = styled(Menu)`
+export const SidebarMenuStyle = styled(Menu)`
   height: 100%;
   .ant-menu-submenu-selected {
     .ant-menu-submenu-title {

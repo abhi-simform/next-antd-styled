@@ -1,7 +1,7 @@
 import { Input, FormItem, Form, InputPassword, Button } from '@/components/Ant'
 import { SignInStyles } from './signin.styles'
 
-export default function Home() {
+export default function Signin() {
   return (
     <SignInStyles>
       <p className="title">Signin</p>

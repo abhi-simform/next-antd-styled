@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description: 'NextJS, Ant Design and Styled Components boilerplate'
 }
 
-export default function AuthLayout({
+export default function RootLayout({
   children
 }: Readonly<{
   children: React.ReactNode
