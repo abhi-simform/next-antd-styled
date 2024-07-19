@@ -3,7 +3,6 @@ import Image from 'next/image'
 import { MenuProps } from 'antd'
 import { Layout, Menu } from '@/components/Ant'
 import { ThemeProvider } from '@/context/ThemeContext'
-import { CloseCircle, EyeClose, EyeOpen } from '@/components/Icons'
 import ThemeSwitcher from '@/components/ThemeSwitcher'
 import {
   DashboardContentStyle,
@@ -23,17 +22,12 @@ const items = new Array(3).fill(null).map((_, index) => ({
   label: `nav ${index + 1}`
 }))
 
-const items2: MenuProps['items'] = [
-  <CloseCircle key={1} />,
-  <EyeClose key={2} />,
-  <EyeOpen key={3} />
-].map((icon, index) => {
+const items2: MenuProps['items'] = [1, 2, 3].map((icon, index) => {
   const key = String(index + 1)
 
   return {
     key: `sub${key}`,
     icon,
-    label: `subnav ${key}`,
 
     children: new Array(4).fill(null).map((_, j) => {
       const subKey = index * 4 + j + 1
