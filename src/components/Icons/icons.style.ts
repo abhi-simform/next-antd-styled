@@ -5,7 +5,7 @@ export const StyledDiv = styled.div`
   flex-direction: column;
   gap: 8px;
   align-items: center;
-  border: 1px solid var(--neutral-300);
+  border: 1px solid var(--clr-neutral-200);
   border-radius: 8px;
   padding: 16px;
   .anticon {

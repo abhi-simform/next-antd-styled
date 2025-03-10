@@ -1,11 +1,15 @@
-import { Input, FormItem, Form, InputPassword, Button } from '@/components/Ant'
-import { SignInStyles } from './signin.styles'
+import { Input, FormItem, Form, InputPassword, Button, Title, Paragraph } from '@/components/Ant'
 
 export default function Signin() {
   return (
-    <SignInStyles>
-      <p className="title">Signin</p>
-      <p className="info">Don’t have an account? Sign Up</p>
+    <div>
+      <Title>Signin</Title>
+      <Paragraph>
+        Don’t have an account?{' '}
+        <Button type="link" href="/auth/signup">
+          Sign Up
+        </Button>
+      </Paragraph>
       <Form layout="vertical">
         <FormItem label="Email" required>
           <Input placeholder="input placeholder" />
@@ -19,6 +23,6 @@ export default function Signin() {
           </Button>
         </FormItem>
       </Form>
-    </SignInStyles>
+    </div>
   )
 }

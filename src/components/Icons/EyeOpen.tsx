@@ -1,6 +1,6 @@
-export function EyeOpen() {
+export function EyeOpen({ className, style }: { className?: string; style?: React.CSSProperties }) {
   return (
-    <span className="anticon">
+    <span className={`anticon ${className || ''}`.trim()} style={style}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="1em"

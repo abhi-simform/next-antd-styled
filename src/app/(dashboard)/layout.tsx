@@ -1,15 +1,16 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import { MenuProps } from 'antd'
-import { Layout, Menu } from '@/components/Ant'
 import { ThemeProvider } from '@/context/ThemeContext'
-import ThemeSwitcher from '@/components/ThemeSwitcher'
+import React from 'react'
+import { LaptopOutlined, NotificationOutlined, UserOutlined } from '@ant-design/icons'
 import {
-  DashboardContentStyle,
-  DashboardHeaderStyle,
-  DashboardLayoutStyle,
-  DashboardSiderStyle,
-  SidebarMenuStyle
+  MainLayout,
+  MainLayoutContent,
+  MainLayoutHeader,
+  RootLayout,
+  RootLayoutSider,
+  SiderMenu
 } from './dashboard.styles'
 
 export const metadata: Metadata = {
@@ -17,27 +18,24 @@ export const metadata: Metadata = {
   description: 'NextJS, Ant Design and Styled Components boilerplate'
 }
 
-const items = new Array(3).fill(null).map((_, index) => ({
-  key: index + 1,
-  label: `nav ${index + 1}`
-}))
+const items: MenuProps['items'] = [UserOutlined, LaptopOutlined, NotificationOutlined].map(
+  (icon, index) => {
+    const key = String(index + 1)
 
-const items2: MenuProps['items'] = [1, 2, 3].map((icon, index) => {
-  const key = String(index + 1)
-
-  return {
-    key: `sub${key}`,
-    icon,
-
-    children: new Array(4).fill(null).map((_, j) => {
-      const subKey = index * 4 + j + 1
-      return {
-        key: subKey,
-        label: `option${subKey}`
-      }
-    })
+    return {
+      key: `sub${key}`,
+      icon: React.createElement(icon),
+      label: `Subnav ${key}`,
+      children: Array.from({ length: 4 }).map((_, j) => {
+        const subKey = index * 4 + j + 1
+        return {
+          key: subKey,
+          label: `Option ${subKey}`
+        }
+      })
+    }
   }
-})
+)
 
 export default function DashboardLayout({
   children
@@ -57,24 +55,22 @@ export default function DashboardLayout({
       </head>
       <body>
         <ThemeProvider>
-          <DashboardLayoutStyle>
-            <DashboardSiderStyle breakpoint="lg" collapsible>
-              <SidebarMenuStyle
+          <RootLayout>
+            <RootLayoutSider width={200} collapsible breakpoint="lg">
+              <SiderMenu
                 mode="inline"
                 defaultSelectedKeys={['1']}
                 defaultOpenKeys={['sub1']}
-                items={items2}
+                items={items}
               />
-            </DashboardSiderStyle>
-            <Layout>
-              <DashboardHeaderStyle>
-                <Image src="/images/logoFUll.svg" alt="simform logo" width={686} height={126} />
-                <Menu mode="horizontal" defaultSelectedKeys={['2']} items={items} />
-                <ThemeSwitcher />
-              </DashboardHeaderStyle>
-              <DashboardContentStyle>{children}</DashboardContentStyle>
-            </Layout>
-          </DashboardLayoutStyle>
+            </RootLayoutSider>
+            <MainLayout>
+              <MainLayoutHeader>
+                <Image src="/images/logo.svg" alt="" width={140} height={26} />
+              </MainLayoutHeader>
+              <MainLayoutContent>{children}</MainLayoutContent>
+            </MainLayout>
+          </RootLayout>
         </ThemeProvider>
       </body>
     </html>

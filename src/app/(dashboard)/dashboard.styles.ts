@@ -1,49 +1,30 @@
 'use client'
 
-import { Content, Header, Layout, Menu, Sider } from '@/components/Ant'
+import { Layout, Menu } from '@/components/Ant'
 import styled from 'styled-components'
 
-export const DashboardLayoutStyle = styled(Layout)`
-  min-height: 100vh;
-  min-height: 100dvh;
-`
+export const RootLayout = styled(Layout)``
 
-export const DashboardSiderStyle = styled(Sider)`
+export const RootLayoutSider = styled(Layout.Sider)`
+  background-color: var(--clr-neutral-0);
+`
+export const SiderMenu = styled(Menu)`
+  height: 100%;
   overflow: auto;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  height: 100dvh;
-  align-self: flex-start;
-  &.ant-layout-sider {
-    position: sticky;
-  }
 `
 
-export const DashboardHeaderStyle = styled(Header)`
-  position: sticky;
-  top: 0;
-  background-color: var(--neutral-50);
+export const MainLayout = styled(Layout)``
+
+export const MainLayoutHeader = styled(Layout.Header)`
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  img {
-    max-width: 200px;
-  }
+  border-bottom: 1px solid var(--clr-neutral-100);
 `
 
-export const DashboardContentStyle = styled(Content)`
-  padding: 20px;
-`
-
-export const SidebarMenuStyle = styled(Menu)`
-  height: 100%;
-  .ant-menu-submenu-selected {
-    .ant-menu-submenu-title {
-      background-color: var(--primary-500);
-      &:hover {
-        background-color: var(--primary-600);
-      }
-    }
-  }
+export const MainLayoutContent = styled(Layout.Content)`
+  height: calc(100vh - 64px);
+  height: calc(100dvh - 64px);
+  overflow: auto;
+  padding: 24px;
+  background: var(--clr-neutral-50);
 `

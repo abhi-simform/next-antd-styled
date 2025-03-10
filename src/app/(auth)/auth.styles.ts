@@ -1,7 +1,7 @@
 'use client'
 
-import { breakpoints, breakpointsDown } from '@/config/variables'
 import styled from 'styled-components'
+import { breakpoints, breakpointsDown } from '@/config/variables'
 
 export const AuthStyles = styled.main`
   display: grid;
@@ -23,7 +23,7 @@ export const AuthStyles = styled.main`
     align-content: center;
     justify-items: center;
     padding: 40px;
-    background-color: var(--neutral-50);
+    background-color: var(--clr-neutral-50);
     @media ${breakpointsDown.md} {
       padding: 20px;
     }
@@ -35,7 +35,7 @@ export const AuthStyles = styled.main`
       padding: 20px;
       width: 100%;
       max-width: 400px;
-      background-color: var(--neutral-0);
+      background-color: var(--clr-neutral-0);
       border-radius: 12px;
       box-shadow:
         0 -1px 3px 0 hsl(220 3% 15% / calc(1% + 2%)),
@@ -45,4 +45,5 @@ export const AuthStyles = styled.main`
         0 12px 15px -5px hsl(220 3% 15% / calc(1% + 7%));
     }
   }
+  text-align: center;
 `

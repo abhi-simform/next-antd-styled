@@ -1,10 +1,11 @@
 'use client'
 
 import { createGlobalStyle } from 'styled-components'
-import { Inter } from 'next/font/google'
+import { Radio_Canada } from 'next/font/google'
 import { themes } from './variables'
+import { utilityClasses } from './utilityClasses'
 
-const inter = Inter({ subsets: ['latin'] })
+const radioCanada = Radio_Canada({ subsets: ['latin'] })
 
 const themeValues = Object.entries(themes)
 
@@ -15,8 +16,7 @@ const colorVariables = themeValues
 ${Object.entries(values)
   .map(
     ([color, value]) => `
-  --${color}-rgb: ${value};
-  --${color}: rgb(${value});`
+  --${color}: ${value};`
   )
   .join('')}
 }`
@@ -24,6 +24,10 @@ ${Object.entries(values)
   .join('')
 
 const GlobalStyle = createGlobalStyle`
+:root {
+  interpolate-size: allow-keywords;
+}
+
 *,
 *:before,
 *:after {
@@ -42,13 +46,12 @@ html {
 body {
   min-height: 100%;
   line-height: 1.5;
-  font-family: ${inter.style.fontFamily};
+  font-family: ${radioCanada.style.fontFamily};
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
   text-rendering: optimizeSpeed;
-  background-color: var(--neutral-50);
-  color: var(--neutral-950);
+  text-wrap: pretty;
 }
 
 img,
@@ -84,12 +87,10 @@ samp {
   font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
 }
 
-hr {
-  all: unset;
-  display: block;
-  height: 1px;
-  width: 100%;
-  background: currentColor;
+h1,
+h2,
+h3 {
+  text-wrap: balance;
 }
 
 .visually-hidden:not(:focus):not(:active) {
@@ -101,6 +102,8 @@ hr {
   white-space: nowrap;
   width: 1px;
 }
+
+${utilityClasses}
 `
 
 export default GlobalStyle

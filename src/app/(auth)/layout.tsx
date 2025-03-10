@@ -30,7 +30,7 @@ export default function AuthLayout({
             <aside className="aside" />
             <div className="content">
               <Image
-                src="/images/logoFull.svg"
+                src="/images/logo.svg"
                 className="logo"
                 alt="simform logo"
                 width={686}
